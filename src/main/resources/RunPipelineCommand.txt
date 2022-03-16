@@ -1,0 +1,3 @@
+mvn compile exec:java \
+-Dexec.mainClass=com.naman.apachebeam.student.TotalScoreComputation \
+-Dexec.args="--outputFile=src/main/resources/total_scores"
