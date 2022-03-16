@@ -16,16 +16,12 @@ public class TotalScoreComputation {
     private static final String CSV_HEADER =
             "ID,Name,Physics,Chemistry,Math,English,Biology,History";
 
-    private static final String projectId = "gcp-learning-342413";
-    private static final String topicId = "messages";
-
     public static void main(String[] args) throws IOException {
-
-        TopicName topicName = TopicName.of(projectId, topicId);
 
         TotalScoreComputationOptions options = PipelineOptionsFactory
                 .fromArgs(args).withValidation()
                 .as(TotalScoreComputationOptions.class);
+        TopicName topicName = TopicName.of(options.getProjectId(), options.getTopic());
         Pipeline pipeline = Pipeline.create(options);
 
         System.out.println("****Input File: " + options.getInputFile());

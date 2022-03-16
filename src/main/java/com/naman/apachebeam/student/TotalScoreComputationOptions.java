@@ -18,4 +18,15 @@ public interface TotalScoreComputationOptions extends PipelineOptions {
     String getOutputFile();
 
     void setOutputFile(String value);
+
+    @Validation.Required
+    String getProjectId();
+
+    void setProjectId(String value);
+
+    @Validation.Required
+    String getTopic();
+
+    void setTopic(String value);
+
 }
